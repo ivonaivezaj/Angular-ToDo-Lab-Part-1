@@ -7,10 +7,6 @@ import { Todo } from "../interfaces/todo";
   styleUrls: ["./todo.component.css"]
 })
 export class TodoComponent implements OnInit {
-  constructor() {}
-  searchText;
-  ngOnInit(): void {}
-  
   todos: Todo[] = [
     {
       task: "Fold clothes",
@@ -38,20 +34,7 @@ export class TodoComponent implements OnInit {
     }
   ];
 
-  addItem = newItemInput => {
-    let newItem = {
-      task: newItemInput,
-      completed:false
-    };
-    this.todos.push(newItem);
-  }
+  constructor() {}
 
-  removeItem (removeObject) {
-    this.todos=this.todos.filter(t=>t.task !== removeObject.task);
-  }
-  completeTask(done) {
-    done.completed = !done.completed;
-  }
+  ngOnInit(): void {}
 }
-
-
